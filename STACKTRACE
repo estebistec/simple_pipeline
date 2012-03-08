@@ -1,0 +1,46 @@
+You have requested to collect static files at the destination
+location as specified in your settings.
+
+This will overwrite existing files!
+Are you sure you want to do this?
+
+Type 'yes' to continue, or 'no' to cancel: yes
+Copying '/Users/steven/virtualenvs/simple-pipeline/src/simple_pipeline/myapp/static/css/reset.css'
+Copying '/Users/steven/virtualenvs/simple-pipeline/src/simple_pipeline/myapp/static/img/wilford-brimley-diabeetus-cat.jpg'
+Copying '/Users/steven/virtualenvs/simple-pipeline/src/simple_pipeline/myapp/static/js/hello.js'
+Copying '/Users/steven/virtualenvs/simple-pipeline/src/simple_pipeline/myapp/static/less/effects.css'
+Copying '/Users/steven/virtualenvs/simple-pipeline/src/simple_pipeline/myapp/static/less/effects.less'
+Traceback (most recent call last):
+  File "manage.py", line 14, in <module>
+    execute_manager(settings)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/django/core/management/__init__.py", line 438, in execute_manager
+    utility.execute()
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/django/core/management/__init__.py", line 379, in execute
+    self.fetch_command(subcommand).run_from_argv(self.argv)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/django/core/management/base.py", line 191, in run_from_argv
+    self.execute(*args, **options.__dict__)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/django/core/management/base.py", line 220, in execute
+    output = self.handle(*args, **options)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/django/core/management/base.py", line 351, in handle
+    return self.handle_noargs(**options)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/staticfiles/management/commands/collectstatic.py", line 163, in handle_noargs
+    collected = self.collect()
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/staticfiles/management/commands/collectstatic.py", line 119, in collect
+    dry_run=self.dry_run)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/pipeline/storage.py", line 26, in post_process
+    output_file = packager.pack_stylesheets(package)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/pipeline/packager.py", line 90, in pack_stylesheets
+    variant=package.variant, **kwargs)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/pipeline/packager.py", line 100, in pack
+    content = compress(paths, **kwargs)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/pipeline/compressors/__init__.py", line 71, in compress_css
+    css = self.concatenate_and_rewrite(paths, output_filename, variant)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/pipeline/compressors/__init__.py", line 134, in concatenate_and_rewrite
+    content = self.read_file(path)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/pipeline/compressors/__init__.py", line 206, in read_file
+    file = default_storage.open(path, 'rb')
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/django/core/files/storage.py", line 33, in open
+    file = self._open(name, mode)
+  File "/Users/steven/virtualenvs/simple-pipeline/lib/python2.7/site-packages/storages/backends/s3boto.py", line 177, in _open
+    raise IOError('File does not exist: %s' % name)
+IOError: File does not exist: css/reset.css
