@@ -107,9 +107,7 @@ PIPELINE_JS = {
     }
 }
 
-STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
-# PIPELINE_STORAGE = 'pipeline.storage.PipelineFinderStorage'
-PIPELINE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+STATICFILES_STORAGE = 'simple_pipeline.myapp.pipeline_storage.S3PipelineStorage'
 PIPELINE = True
 PIPELINE_CSS_COMPRESSOR = 'simple_pipeline.myapp.compressors.CssminCompressor'
 PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
