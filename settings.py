@@ -89,7 +89,7 @@ PIPELINE_CSS = {
     'standard': {
         'source_filenames': (
           'css/reset.css',
-          'less/effects.less'
+          'less/a/effects.less'
         ),
         'output_filename': 'css/test.css',
         'extra_context': {
@@ -107,8 +107,10 @@ PIPELINE_JS = {
     }
 }
 
-STATICFILES_STORAGE = 'simple_pipeline.myapp.pipeline_storage.S3PipelineStorage'
-PIPELINE = True
+#STATICFILES_STORAGE = 'simple_pipeline.myapp.pipeline_storage.S3PipelineStorage'
+STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+AWS_S3_CUSTOM_DOMAIN = 'd6uq4mpwwmmty.cloudfront.net'
+STATIC_URL = 'http://d6uq4mpwwmmty.cloudfront.net/'
 PIPELINE_CSS_COMPRESSOR = 'simple_pipeline.myapp.compressors.CssminCompressor'
 PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
 PIPELINE_COMPILERS = (
